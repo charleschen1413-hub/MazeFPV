@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>韻雯3D迷宮 - 出口白牆版</title>
+<title>韻雯的3D迷宮 - 出口是白牆</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
     body {
@@ -128,7 +128,7 @@ let difficulty = 'EASY'; let score = 0; let timeLeft = 180; let timerInterval = 
 // 地圖: 1=牆, 0=路, 9=出口牆
 const mapWidth = 20; const mapHeight = 25;
 const gameMap = [
-   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1], 
     [1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,1,1,1,0,1],
     [1,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,1],
@@ -153,7 +153,6 @@ const gameMap = [
     [1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1],
     [1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,9,1], 
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-
 ];
 
 let player = { x: 1.5, y: 1.5, dir: Math.PI / 2, rotSpeed: 0.05, moveSpeed: 0.08, radius: 0.3 };
@@ -334,10 +333,13 @@ function findPathToExit() {
 
 function renderBackground() {
     // 繪製天花板 (深灰色)
-	ctx.fillStyle = '#387373'; // 天花板 (暗青色天空)
-	ctx.fillRect(0, 0, screenWidth, screenHeight / 2);
+//ctx.fillStyle = '#387373'; // 天花板 (暗青色天空)
+
+    ctx.fillStyle = '#555555'; // 天花板 (較亮的水泥灰)
+    ctx.fillRect(0, 0, screenWidth, screenHeight / 2);
     // 繪製地板 (更深的灰色)
-    ctx.fillStyle = '#202020'; // 地板 (深色柏油/軌道)
+//    ctx.fillStyle = '#202020'; // 地板 (深色柏油/軌道)
+ctx.fillStyle = '#2E4028'; // 地板 (暗綠色草地)
     ctx.fillRect(0, screenHeight / 2, screenWidth, screenHeight / 2);
 }
 
@@ -408,6 +410,4 @@ function drawSprites(zBuffer) {
 init();
 </script>
 </body>
-
 </html>
-
